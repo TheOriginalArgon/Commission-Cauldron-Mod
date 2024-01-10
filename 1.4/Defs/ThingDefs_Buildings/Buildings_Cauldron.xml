@@ -1,0 +1,73 @@
+<Defs>
+
+    <!-- Cauldron that cooks food -->
+    <ThingDef ParentName="BuildingBase">
+        <defName>CM_Cauldron</defName>
+        <label>cauldron</label>
+        <description>description placeholder.</description>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <thingClass>CauldronMod.Building_FoodPot</thingClass>
+        <graphicData>
+            <texPath>Things/Building/Misc/Campfire</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(2,2)</drawSize>
+            <drawRotated>false</drawRotated>
+            <allowFlip>false</allowFlip>
+            <damageData>
+                <rect>(0.2,0,0.6,0.1)</rect>
+            </damageData>
+        </graphicData>
+        <costList>
+            <Steel>20</Steel>
+            <WoodLog>20</WoodLog>
+        </costList>
+        <altitudeLayer>Building</altitudeLayer>
+        <rotatable>true</rotatable>
+        <neverMultiSelect>true</neverMultiSelect>
+        <uiIconScale>0.8</uiIconScale>
+        <fillPercent>0.5</fillPercent>
+        <useHitPoints>True</useHitPoints>
+        <statBases>
+            <WorkToBuild>600</WorkToBuild>
+            <MaxHitPoints>100</MaxHitPoints>
+            <Flammability>1.0</Flammability>
+        </statBases>
+        <tickerType>Normal</tickerType>
+        <size>(2,2)</size>
+        <designationCategory>Production</designationCategory>
+        <passability>PassThroughOnly</passability>
+        <pathCost>70</pathCost>
+        <surfaceType>Item</surfaceType>
+        <!-- <researchPrerequisites>
+            <li>VCE_StewCooking</li>
+        </researchPrerequisites> --> <!-- Ask the commissioner -->
+        <comps>
+
+            <!-- Here should go a possible comp that makes it work the way it is intended to. -->
+
+            <li Class="CompProperties_Refuelable">
+                <fuelConsumptionRate>3.33</fuelConsumptionRate>
+                <fuelCapacity>20.0</fuelCapacity>
+                <fuelConsumptionPerTickInRain>0.0006</fuelConsumptionPerTickInRain>
+                <fuelFilter>
+                    <thingDefs>
+                        <li>WoodLog</li>
+                    </thingDefs>
+                </fuelFilter>
+                <initialFuelPercent>1</initialFuelPercent>
+                <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+                <consumeFuelOnlyWhenUsed>false</consumeFuelOnlyWhenUsed>
+            </li>
+            <li Class="CompProperties_HeatPusher">
+                <compClass>CompHeatPusherPowered</compClass>
+                <heatPerSecond>6</heatPerSecond>
+                <heatPushMaxTemperature>36</heatPushMaxTemperature>
+            </li>
+            <li Class="CompProperties_Glower">
+                <glowRadius>3</glowRadius>
+                <glowColor>(244, 112, 42,0)</glowColor>
+            </li>
+        </comps>
+    </ThingDef>
+
+</Defs>

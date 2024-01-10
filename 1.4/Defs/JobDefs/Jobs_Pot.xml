@@ -1,0 +1,10 @@
+<Defs>
+
+    <JobDef>
+        <defName>CM_TakeFoodToPot</defName>
+        <driverClass>CauldronMod.JobDriver_TakeFoodToPot</driverClass>
+        <reportString>delivering TargetA to TargetB.</reportString>
+        <forceCompleteBeforeNextJob>true</forceCompleteBeforeNextJob>
+    </JobDef>
+
+</Defs>

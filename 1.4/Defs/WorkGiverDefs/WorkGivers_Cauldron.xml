@@ -1,0 +1,17 @@
+<Defs>
+
+    <WorkGiverDef>
+        <defName>CM_DeliverFoodToPot</defName>
+        <label>deliver food to pot pot</label>
+        <giverClass>CauldronMod.WorkGiver_DeliverFoodToPot</giverClass>
+        <workType>Hauling</workType>
+        <verb>deliver food to pot</verb>
+        <gerund>delivering food to pot</gerund>
+        <priorityInType>80</priorityInType>
+        <requiredCapacities>
+            <li>Manipulation</li>
+        </requiredCapacities>
+        <prioritizeSustains>true</prioritizeSustains>
+    </WorkGiverDef>
+
+</Defs>
