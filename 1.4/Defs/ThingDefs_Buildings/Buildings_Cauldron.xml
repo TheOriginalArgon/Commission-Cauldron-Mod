@@ -4,13 +4,13 @@
     <ThingDef ParentName="BuildingBase">
         <defName>CM_Cauldron</defName>
         <label>cauldron</label>
-        <description>description placeholder.</description>
+        <description>A large stew pot capable of holding large amounts of food. As long as its content are regularly moved around and the fire is kept lit, these won't spoil.</description>
         <drawerType>MapMeshAndRealTime</drawerType>
         <thingClass>CauldronMod.Building_FoodPot</thingClass>
         <graphicData>
-            <texPath>Things/Building/Misc/Campfire</texPath>
+            <texPath>Things/Building/CM_Pot/CM_Pot_Empty</texPath>
             <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>(2,2)</drawSize>
+            <drawSize>(3,3)</drawSize>
             <drawRotated>false</drawRotated>
             <allowFlip>false</allowFlip>
             <damageData>
@@ -32,19 +32,45 @@
             <MaxHitPoints>100</MaxHitPoints>
             <Flammability>1.0</Flammability>
         </statBases>
+        <building>
+            <ai_chillDestination>false</ai_chillDestination>
+            <expandHomeArea>true</expandHomeArea>
+            <fixedStorageSettings>
+                <filter>
+                    <categories>
+                        <li>MeatRaw</li>
+                        <li>PlantFoodRaw</li>
+                    </categories>
+                </filter>
+            </fixedStorageSettings>
+            <defaultStorageSettings>
+                <filter>
+                    <categories>
+                        <li>MeatRaw</li>
+                        <li>PlantFoodRaw</li>
+                    </categories>
+                </filter>
+            </defaultStorageSettings>
+        </building>
+        <inspectorTabs>
+            <li>ITab_Storage</li>
+        </inspectorTabs>
         <tickerType>Normal</tickerType>
         <size>(2,2)</size>
         <designationCategory>Production</designationCategory>
         <passability>PassThroughOnly</passability>
         <pathCost>70</pathCost>
         <surfaceType>Item</surfaceType>
-        <!-- <researchPrerequisites>
-            <li>VCE_StewCooking</li>
-        </researchPrerequisites> --> <!-- Ask the commissioner -->
+        <researchPrerequisites>
+            <li>CM_FoodPot</li>
+        </researchPrerequisites>
         <comps>
 
             <!-- Here should go a possible comp that makes it work the way it is intended to. -->
-
+            <li Class="CauldronMod.CompProperties_Cauldron">
+                <ticksToRuin>15000</ticksToRuin>
+                <ticksToStir>10000</ticksToStir>
+            </li>
             <li Class="CompProperties_Refuelable">
                 <fuelConsumptionRate>3.33</fuelConsumptionRate>
                 <fuelCapacity>20.0</fuelCapacity>

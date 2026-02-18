@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 using Verse;
 using Verse.AI;
 
@@ -46,7 +47,8 @@ namespace CauldronMod
             });
             yield return Toils_General.DoAtomic(delegate
             {
-                job.count = (int)(Pot.NutritionSpaceLeft / job.GetTarget(TargetIndex.B).Thing.GetStatValue(StatDefOf.Nutrition));
+                int num = Mathf.CeilToInt(Pot.NutritionSpaceLeft / job.GetTarget(TargetIndex.B).Thing.GetStatValue(StatDefOf.Nutrition));
+                job.count = num <= 0 ? 1 : num;
             });
             Toil reserveFood = Toils_Reserve.Reserve(TargetIndex.B, 1, -1, null);
             yield return reserveFood;

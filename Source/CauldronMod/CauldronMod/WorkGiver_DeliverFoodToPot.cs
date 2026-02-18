@@ -30,7 +30,7 @@ namespace CauldronMod
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
             Building_FoodPot building_FoodPot = t as Building_FoodPot;
-            if (building_FoodPot == null || building_FoodPot.NutritionSpaceLeft <= 0)
+            if (building_FoodPot == null || building_FoodPot.NutritionSpaceLeft <= 0 || !building_FoodPot.TryGetComp<CompRefuelable>().HasFuel)
             {
                 return false;
             }
@@ -59,7 +59,7 @@ namespace CauldronMod
 
         private Thing FindFood(Pawn pawn, Building_FoodPot pot)
         {
-            Predicate<Thing> predicate = (Thing x) => !x.IsForbidden(pawn) && pawn.CanReserve(x, 1, -1, null, false) && (x.HasThingCategory(ThingCategoryDefOf.MeatRaw) || x.HasThingCategory(ThingCategoryDefOf.PlantFoodRaw));
+            Predicate<Thing> predicate = (Thing x) => !x.IsForbidden(pawn) && pawn.CanReserve(x, 1, -1, null, false) && pot.GetStoreSettings().filter.Allows(x);
             return GenClosest.ClosestThingReachable(pawn.Position, pawn.Map, ThingRequest.ForGroup(ThingRequestGroup.FoodSourceNotPlantOrTree), PathEndMode.ClosestTouch, TraverseParms.For(pawn, Danger.Deadly, TraverseMode.ByPawn, false, false, false), 9999f, predicate, null, 0, -1, false, RegionType.Set_Passable, false);
         }
     }

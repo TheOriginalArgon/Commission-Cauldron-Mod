@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,19 +43,29 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Building_FoodPot.cs" />
     <Compile Include="CauldronMod.cs" />
-    <Compile Include="HarmonyPatch_PrepareToIngestToils.cs" />
+    <Compile Include="CompProperties_Cauldron.cs" />
+    <Compile Include="HarmonyPatch_Delegate.cs" />
+    <Compile Include="HarmonyPatch_DeliverFoodJob.cs" />
+    <Compile Include="HarmonyPatch_FeedJob.cs" />
+    <Compile Include="HarmonyPatch_FeedPatientJob.cs" />
+    <Compile Include="HarmonyPatch_GetFood.cs" />
+    <Compile Include="HarmonyPatch_IngestJob.cs" />
+    <Compile Include="HarmonyPatch_ThingRequest.cs" />
+    <Compile Include="JobDriver_StirPot.cs" />
     <Compile Include="JobDriver_TakeFoodToPot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WorkGiver_DeliverFoodToPot.cs" />
+    <Compile Include="WorkGiver_StirPot.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Krafs.Rimworld.Ref">
-      <Version>1.4.3901</Version>
-    </PackageReference>
     <PackageReference Include="Lib.Harmony">
       <Version>2.2.2</Version>
       <PrivateAssets>all</PrivateAssets>

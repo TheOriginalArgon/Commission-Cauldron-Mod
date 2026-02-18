@@ -1,0 +1,16 @@
+<Defs>
+
+    <ResearchProjectDef>
+        <defName>CM_FoodPot</defName>
+        <label>food pot</label>
+        <description>Prepare large stews in a big fueled pot, which allows you to preserve food indefinitely as long as you stir its contents and keep the fire lit.</description>
+        <baseCost>900</baseCost>
+        <techLevel>Neolithic</techLevel>
+        <tags>
+            <li>TribalStart</li>
+        </tags>
+        <researchViewX>0.00</researchViewX>
+        <researchViewY>4.90</researchViewY>
+    </ResearchProjectDef>
+
+</Defs>
