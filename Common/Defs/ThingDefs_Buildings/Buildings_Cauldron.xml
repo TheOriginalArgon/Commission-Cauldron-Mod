@@ -56,6 +56,9 @@
             <li>ITab_Storage</li>
         </inspectorTabs>
         <tickerType>Normal</tickerType>
+        <!-- Native dispenser jobs collect meals from the front of the pot. -->
+        <hasInteractionCell>true</hasInteractionCell>
+        <interactionCellOffset>(0,0,-1)</interactionCellOffset>
         <size>(2,2)</size>
         <designationCategory>Production</designationCategory>
         <passability>PassThroughOnly</passability>

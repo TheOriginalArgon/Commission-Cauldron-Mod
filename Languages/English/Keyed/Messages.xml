@@ -1,3 +1,6 @@
 <LanguageData>
-    <CM_MessageRuined>Food has ruined away in pot.</CM_MessageRuined>
+    <CM_MessageRuined>The food in the pot has spoiled.</CM_MessageRuined>
+    <CM_Nutrition>Nutrition: {0}/{1}</CM_Nutrition>
+    <CM_NeedsStirring>Needs stirring</CM_NeedsStirring>
+    <CM_Ruining>Spoiling: {0}</CM_Ruining>
 </LanguageData>
